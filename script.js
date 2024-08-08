@@ -68,3 +68,73 @@ papers.forEach(paper => {
   const p = new Paper();
   p.init(paper);
 });
+
+document.querySelectorAll('.paper.image').forEach(paper => {
+  let isDragging = false;
+  let startX, startY, initialX, initialY;
+
+  paper.addEventListener('mousedown', startDrag);
+  paper.addEventListener('mousemove', drag);
+  paper.addEventListener('mouseup', endDrag);
+
+  paper.addEventListener('touchstart', startDrag, {passive: false});
+  paper.addEventListener('touchmove', drag, {passive: false});
+  paper.addEventListener('touchend', endDrag, {passive: false});
+
+  function startDrag(e) {
+    isDragging = true;
+    startX = (e.type === 'touchstart' ? e.touches[0].clientX : e.clientX);
+    startY = (e.type === 'touchstart' ? e.touches[0].clientY : e.clientY);
+    initialX = paper.offsetLeft;
+    initialY = paper.offsetTop;
+  }
+
+  function drag(e) {
+    if (isDragging) {
+      e.preventDefault();
+      const moveX = (e.type === 'touchmove' ? e.touches[0].clientX : e.clientX) - startX;
+      const moveY = (e.type === 'touchmove' ? e.touches[0].clientY : e.clientY) - startY;
+      paper.style.left = `${initialX + moveX}px`;
+      paper.style.top = `${initialY + moveY}px`;
+    }
+  }
+
+  function endDrag() {
+    isDragging = false;
+  }
+});
+
+document.querySelectorAll('.paper.image').forEach(paper => {
+  let isDragging = false;
+  let startX, startY, initialX, initialY;
+
+  paper.addEventListener('mousedown', startDrag);
+  paper.addEventListener('mousemove', drag);
+  paper.addEventListener('mouseup', endDrag);
+
+  paper.addEventListener('touchstart', startDrag, {passive: false});
+  paper.addEventListener('touchmove', drag, {passive: false});
+  paper.addEventListener('touchend', endDrag, {passive: false});
+
+  function startDrag(e) {
+    isDragging = true;
+    startX = (e.type === 'touchstart' ? e.touches[0].clientX : e.clientX);
+    startY = (e.type === 'touchstart' ? e.touches[0].clientY : e.clientY);
+    initialX = paper.offsetLeft;
+    initialY = paper.offsetTop;
+  }
+
+  function drag(e) {
+    if (isDragging) {
+      e.preventDefault();
+      const moveX = (e.type === 'touchmove' ? e.touches[0].clientX : e.clientX) - startX;
+      const moveY = (e.type === 'touchmove' ? e.touches[0].clientY : e.clientY) - startY;
+      paper.style.left = `${initialX + moveX}px`;
+      paper.style.top = `${initialY + moveY}px`;
+    }
+  }
+
+  function endDrag() {
+    isDragging = false;
+  }
+});

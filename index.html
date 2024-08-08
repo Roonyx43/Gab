@@ -1,42 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gabriela 🤍</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-<!-- Developed by Saravanan  -->
-<div class="paper heart">
-</div>
-<div class="paper image">
-  <p>E eu também te amo</p>
-    <p>meu amor! 🤍🤍</p>
-   <img src="assets/Gab3.jpg" />
-</div>
-<div class="paper image">
-  <p</p>
-  <img src="assets/Gab1.jpg" />
-</div>
-<div class="paper image">
-  <p>Como pode </p>
-   <p> Ser tão linda 🤍 </p>
-  <img src="assets/Gab2.jpg" />
-</div>
-<div class="paper red">
-<p class="p1"> A pessoa mais</p>
-<p class="p2">importante 🥺</p>
-</div>
-<div class="paper">
-<p class="p1">Você é absurdamente </p>
-  <p class="p1">Incrivel <span style="color: white !important;">🤍</span></p>
-</div>
-<div class="paper">
-<p class="p1">Mova os papeis!</p>
-</div>
-<!-- javascript file -->
-  <script  src="script.js"></script>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Cara Gabriela.</strong>
+                        <p>
+                            Estou aqui para lhe dizer que você é incrível. 
+                             Obrigado por estar comigo todos os dias, eu vou te amar pelo resto da vida.
+                        </p>
+                        <p class="ps">
+                            PS: Eu to com tempo kk
+                        </p>
+                        <hr>
+  
+                        <p class="ass">-Loch</p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
 </body>
 </html>
